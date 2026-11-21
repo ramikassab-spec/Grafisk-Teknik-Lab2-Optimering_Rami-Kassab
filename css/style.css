@@ -277,6 +277,13 @@ nav a[aria-current="page"] {
   padding: 3rem 5%;
 }
 
+/* Gör picture till en behållare för porträttbilden */
+.about picture {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+}
+
 /* Porträttet anpassas till skärmbredden */
 .about img {
   width: 100%;
@@ -451,7 +458,7 @@ nav a[aria-current="page"] {
   }
 
   /* Porträttet tar en del av den tillgängliga bredden */
-  .about img {
+  .about picture{
     width: 38%;
   }
 
