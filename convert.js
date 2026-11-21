@@ -21,5 +21,23 @@ const files = fs.readdirSync(inputDir).filter((file) => {
 });
 
 
-// Skriv ut filerna i terminalen
-console.log(files);
+// Loopa igenom alla bildfiler
+files.forEach((file) => {
+    console.log("Behandlar bild:", file);
+
+    // Skapa sökvägen till originalbilden
+    const inputPath = path.join(inputDir, file);
+
+    // Hämta filnamnet utan filändelse
+    const fileName = path.parse(file).name;
+
+    // Skapa sökvägen till den nya WebP-bilden
+    const outputPath = path.join(outputDir, fileName + ".webp");
+
+    sharp(inputPath)
+        .webp({ quality: 80 })
+        .toFile(outputPath)
+        .then(() => console.log("Konverterad:", outputPath))
+        .catch((error) => console.log("Fel:", error));
+
+});
