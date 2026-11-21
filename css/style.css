@@ -499,6 +499,13 @@ nav a[aria-current="page"] {
   background: #f7f7f5;
 }
 
+/* Gör att picture fyller samma bredd som bilden */
+.comparison-images picture {
+  display: block;
+  width: 100%;
+}
+
+
 /* Bilderna fyller sin kolumn utan att förvrängas */
 .comparison-images img {
   display: block;
