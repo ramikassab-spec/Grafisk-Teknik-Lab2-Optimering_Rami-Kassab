@@ -1,0 +1,24 @@
+{
+  "name": "lab-2_rami-kassab",
+  "version": "1.0.0",
+  "description": "En responsiv webbplats skapad som en del av en laboration i bildbehandling vid Mittuniversitetet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramikassab-spec/Lab2.1_Rami-Kassab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ramikassab-spec/Lab2.1_Rami-Kassab/issues"
+  },
+  "homepage": "https://github.com/ramikassab-spec/Lab2.1_Rami-Kassab#readme",
+  "dependencies": {
+    "sharp": "^0.35.5"
+  }
+}

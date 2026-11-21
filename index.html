@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bildbehandling</title>
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+  <a class="logo" href="index.html">
+    <img src="images/logo.svg" alt="VISUELL">
+  </a>
+
+  <nav aria-label="Huvudmeny">
+    <ul>
+      <li><a href="index.html" aria-current="page">Start</a></li>
+      <li><a href="bilder.html">Bilder</a></li>
+      <li><a href="om.html">Om mig</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Startsidan stora bild och introduktion -->
+  <section class="hero">
+    <img src="images/header.png" alt="Panoramabild över hav, stad och himmel">
+
+    <div class="hero-content">
+      <p class="hero-label">Portfolio i bildbehandling</p>
+      <h1>Min bildbehandling</h1>
+      <p>Här visar jag bilder som jag har redigerat i Photopea.</p>
+      <a href="bilder.html">Se mina bilder</a>
+    </div>
+  </section>
+
+  <!-- Kort presentation av webbplatsens innehåll -->
+  <section class="intro">
+    <h2>Bildbehandling i Photopea</h2>
+    <p>På den här webbplatsen visar jag mina redigerade fotografier och beskriver mitt arbete med bildbehandling.</p>
+    <a href="om.html">Läs mer om mig</a>
+  </section>
+
+  <!-- De tre redigerade bilderna från bildserien -->
+<section class="series-preview">
+  <h2>Min bildserie</h2>
+
+  <p>
+    Här visas tre bilder som har redigerats i Photopea. På Bildredigering-sidan
+    går det att jämföra varje resultat med originalbilden.
+  </p>
+
+  <div class="series-preview-grid">
+    
+    <article class="series-card">
+      <img src="images/bildserie001.jpeg" alt="Redigerad rosa blomma utan insekt i mitten">
+      <h3>Blomma</h3>
+      <p>Insekten har retuscherats bort och bildens ljus, kontrast och färger har justerats.</p>
+      <a href="bilder.html#blomma">Se före och efter</a>
+    </article>
+
+    <article class="series-card">
+      <img src="images/bildserie002.jpeg" alt="Redigerad katt med naturlig ögonfärg">
+      <h3>Katt</h3>
+      <p>Det lila ögat har färgkorrigerats och bilden har fått en ljusare, tydligare ton. Har även retucherat bort kudden i bakgrunden.</p>
+      <a href="bilder.html#katt">Se före och efter</a>
+    </article>
+
+    
+    <article class="series-card">
+      <img src="images/bildserie003.jpeg" alt="Redigerat bergslandskap med molnig himmel">
+      <h3>Landskap</h3>
+      <p>Ljusstyrka, kontrast och färgtoner har justerats för att framhäva landskapets detaljer.</p>
+      <a href="bilder.html#landskap">Se före och efter</a>
+    </article>
+  </div>
+</section>
+  <!-- Beskrivning av redigeringarna som gjordes i Photopea -->
+<section class="process">
+  <h2>Så arbetade jag med bilderna</h2>
+
+  <p class="process-intro">
+    I den här laborationen har jag arbetat med bildretusch, färgjustering,
+    kontrast, storleksanpassning, beskärning och friläggning i Photopea.
+    Målet har varit att förbättra bilderna och samtidigt anpassa dem för
+    användning på en responsiv webbplats.
+  </p>
+
+  <div class="process-grid">
+    <article class="process-card">
+      <h3>Blomman</h3>
+      <p>
+        I originalbilden syns en insekt i blommans mitt. Den retuscherades bort
+        så att blomman blir bildens tydliga fokus. Jag justerade även bildens
+        ljusstyrka, kontrast och färgstyrka för att göra blomman och den gröna
+        bakgrunden tydligare. Slutligen minskades bilden från 3000 x 4000
+        pixlar till 1500 x 2000 pixlar för webben.
+      </p>
+    </article>
+
+    <article class="process-card">
+      <h3>Katten</h3>
+      <p>
+        I originalbilden har katten ett lila öga. Ögats färg återställdes till
+        en mer naturlig färg så att resultatet ser trovärdigt ut. Bilden fick
+        också högre ljusstyrka, tydligare kontrast och något starkare färger.
+        Därefter minskades den från 3000 x 4000 pixlar till 1125 x 1500 pixlar.
+      </p>
+    </article>
+
+    <article class="process-card">
+      <h3>Landskapet</h3>
+      <p>
+        Landskapsbilden justerades med högre ljusstyrka och kontrast för att
+        göra detaljer i berg, vatten och moln tydligare. Färgerna förstärktes
+        också något för att skapa ett mer levande resultat utan att förlora den
+        dramatiska stämningen. Bildens proportioner behölls, men storleken
+        minskades från 3544 x 1772 pixlar till 2000 x 1000 pixlar.
+      </p>
+    </article>
+
+    <article class="process-card">
+      <h3>Headerbilden</h3>
+      <p>
+        Originalfotot av havet och bron var mycket större än vad webbplatsen
+        behöver. Bilden beskars till ett bredare panoramaformat så att den
+        fungerar som en hero-bild på startsidan. Den minskades sedan från
+        8215 x 3628 pixlar till 1920 x 807 pixlar. Det ger en snabbare sida
+        samtidigt som headerbilden fortfarande är skarp på större skärmar.
+      </p>
+    </article>
+
+    <article class="process-card">
+      <h3>Porträttet</h3>
+      <p>
+        Porträttet frilades med en lagermask för att ta bort den ursprungliga
+        bakgrunden utan att förstöra originalbilden. Kanterna runt hår och
+        jacka justerades noggrant så att porträttet smälter in bättre på sidan.
+        Bilden exporterades som PNG med transparens och fick bredden 1200
+        pixlar. Därför kan porträttet placeras direkt på Om mig-sidans bakgrund.
+      </p>
+    </article>
+  </div>
+</section>
+</main>
+
+<!-- Sidfot med namn och årtal -->
+<footer class="site-footer">
+  <p>© 2026 Rami Kassab</p>
+</footer>
+
+
+</body>
+</html>

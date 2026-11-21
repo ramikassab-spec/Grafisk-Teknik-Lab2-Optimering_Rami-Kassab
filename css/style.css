@@ -1,0 +1,537 @@
+/* Tar med padding och kantlinjer i elementens bredd */
+* {
+  box-sizing: border-box;
+}
+
+/* Grundstil för hela sidan, anpassad för mobil först */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #1f2933;
+  background: #f7f7f5;
+    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* Serif-typsnitt ger rubrikerna en mer redaktionell och exklusiv känsla */
+main h1,
+main h2,
+main h3 {
+  color: #253b30;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+/* Gör så att innehållet fyller utrymmet före sidfoten */
+main {
+  flex: 1;
+}
+
+/* Sidhuvudet: logga överst och meny under på mobil */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 6%;
+  background: #ffffff;
+  border-bottom: 1px solid #dce5de;
+  box-shadow: 0 2px 14px rgba(31, 41, 51, 0.06);
+}
+
+/* Logotypens storlek */
+.logo img {
+  display: block;
+  width: 175px;
+  height: auto;
+}
+
+/* Menyn ligger vågrätt utan punkter */
+nav ul {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Menylänkarnas utseende */
+nav a {
+  color: #1f2933;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Färg när muspekaren är över en menylänk */
+nav a:hover {
+  color: #426b50;
+}
+
+/*Markerar länken till den sida som användaren är på.
+  [aria-current="page"] väljer länken med just det attributet.*/
+nav a[aria-current="page"] {
+  color: #426b50;
+  text-decoration: underline;
+  text-underline-offset: 0.35rem;
+}
+
+/* Behållare för bild och text på startsidan */
+.hero {
+  position: relative;
+  background: #426b50;
+}
+
+/* Headerbilden fyller hela bredden */
+.hero img {
+  display: block;
+  width: 100%;
+  height: 55vh;
+  object-fit: cover;
+  opacity: 0.82;
+}
+
+/* Texten placeras ovanpå headerbilden */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  left: 5%;
+  transform: translateY(-50%);
+  padding: 1.25rem;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Liten etikett som ger hero-delen en mer redaktionell känsla */
+.hero-label {
+  margin: 0 0 0.75rem;
+  color: #b7dfc1;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+/* Startsidan huvudrubrik */
+.hero h1 {
+  margin-top: 0;
+  font-size: clamp(2rem, 8vw, 3rem);
+  color: #ffffff;
+}
+
+/* Länken till bildsidan ser ut som en knapp */
+.hero-content a {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  background: #426b50;
+}
+
+/* Introduktionsdelen under headerbilden */
+.intro {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 5%;
+  text-align: center;
+}
+
+/* Rubriken i introduktionsdelen */
+.intro h2 {
+  margin-top: 0;
+}
+
+/* Länken till Om mig-sidan */
+.intro a {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  background: #426b50;
+}
+
+/* Förhandsvisning av de tre redigerade bilderna på startsidan */
+.series-preview {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 5%;
+}
+
+/* Rubrik och introduktion i bildserie-sektionen */
+.series-preview > h2,
+.series-preview > p {
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+/* Mer luft under rubriken */
+.series-preview > h2 {
+  margin-top: 0;
+}
+
+/*
+  Ett responsivt grid.
+  Korten är minst 250 px breda och placeras automatiskt
+  på fler kolumner när skärmens bredd tillåter det.
+*/
+.series-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Kort för varje redigerad bild */
+.series-card {
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(31, 41, 51, 0.12);
+}
+
+/* Bilderna får samma visuella form i korten */
+.series-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Kortens rubrik, text och länk */
+.series-card h3,
+.series-card p,
+.series-card a {
+  margin-right: 1.25rem;
+  margin-left: 1.25rem;
+}
+
+/* Knapparna får en mjuk rörelse när besökaren håller musen över dem */
+.hero-content a,
+.intro a,
+.series-card a {
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(31, 41, 51, 0.18);
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Knapparna lyfts lätt vid hovring */
+.hero-content a:hover,
+.intro a:hover,
+.series-card a:hover {
+  background: #2e5038;
+  box-shadow: 0 6px 16px rgba(31, 41, 51, 0.24);
+  transform: translateY(-2px);
+}
+
+/* Samma mjukt rundade form används för sidans informationskort */
+.series-card,
+.process-card,
+.comparison {
+  border-radius: 0.5rem;
+}
+
+/* Rubrikens avstånd */
+.series-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Textens radavstånd */
+.series-card p {
+  line-height: 1.6;
+}
+
+/* Länken visas som en knapp */
+.series-card a {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding: 0.65rem 0.9rem;
+  color: #ffffff;
+  text-decoration: none;
+  background: #426b50;
+}
+
+/* Sidfotens utseende */
+.site-footer {
+  padding: 1.5rem 5%;
+  color: #ffffff;
+  text-align: center;
+  background: #1f2933;
+}
+
+/* Tar bort standardmarginalen från sidfotens text */
+.site-footer p {
+  margin: 0;
+}
+
+ /* Om mig-sidan: porträtt och text ligger under varandra på mobil */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 5%;
+}
+
+/* Porträttet anpassas till skärmbredden */
+.about img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+}
+
+/* Begränsar textens bredd för bättre läsbarhet */
+.about-content {
+  max-width: 560px;
+}
+
+/* Tar bort standardmarginal ovanför sidans rubrik */
+.about h1 {
+  margin-top: 0;
+}
+
+/* Bättre radavstånd i presentationstexten */
+.about-content p {
+  line-height: 1.7;
+}
+
+/* Underrubriken som förklarar tanken bakom bildredigeringen */
+.about-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #426b50;
+  font-size: 1.4rem;
+}
+
+/* Liten introduktionstext ovanför rubriken på Om mig-sidan */
+.section-label {
+  margin: 0 0 0.5rem;
+  color: #426b50;
+  font-weight: bold;
+}
+
+/* Sammanfattning av arbetsmomenten */
+.about-work {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 5%;
+  background: transparent;
+}
+
+
+/* Sektionens huvudrubrik */
+.about-work h2 {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+/*
+  Ett responsivt rutnät för arbetsmomenten.
+  Kort visas automatiskt på flera kolumner när utrymmet räcker.
+*/
+.about-work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Kort med ett arbetsmoment */
+.about-work article {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+/* Rubriker i korten */
+.about-work h3 {
+  margin-top: 0;
+  color: #426b50;
+}
+
+/* Texten i korten */
+.about-work p {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* Sektion som beskriver bildredigeringen */
+.process {
+  padding: 4rem 5%;
+  background: #e7efe8;
+}
+
+/* Rubrik och introduktion i process-sektionen */
+.process h2,
+.process-intro {
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+/* Avstånd under huvudrubriken */
+.process h2 {
+  margin-top: 0;
+}
+
+/* Läsbarare radavstånd i introduktionstexten */
+.process-intro {
+  line-height: 1.6;
+}
+
+/*
+  Skapar automatiskt så många kortkolumner som får plats.
+  Varje kort är minst 230 px brett.
+*/
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto 0;
+}
+
+/* Varje kort får vit bakgrund, avstånd och en grön accent */
+.process-card {
+  padding: 1.5rem;
+  background: #ffffff;
+  border-top: 4px solid #426b50;
+  box-shadow: 0 4px 12px rgba(31, 41, 51, 0.12);
+}
+
+/* Kortens rubriker */
+.process-card h3 {
+  margin-top: 0;
+  color: #426b50;
+}
+
+/* Kortens brödtext */
+.process-card p {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+/* Regler för skärmar som är minst 650 px breda */
+@media (min-width: 650px) {
+  /* Logga och meny hamnar på samma rad */
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Större bild på större skärmar */
+  .hero img {
+    height: 65vh;
+  }
+
+  /* Texten får en bestämd maximal bredd */
+  .hero-content {
+    left: 8%;
+    max-width: 620px;
+    padding: 2rem;
+  }
+
+}
+
+  /* Större rubrik på större skärmar */
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+     /* På större skärmar visas porträtt och text bredvid varandra */
+  .about {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Porträttet tar en del av den tillgängliga bredden */
+  .about img {
+    width: 38%;
+  }
+
+  /*
+    flex: 1 låter texten använda återstående plats
+    bredvid porträttet.
+  */
+  .about-content {
+    flex: 1;
+  }
+
+
+  
+  /* Introduktion på Bildredigering-sidan */
+.comparison-intro {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 5% 2rem;
+  text-align: center;
+}
+
+/* Varje före- och efterjämförelse */
+.comparison {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding: 2rem 5%;
+  background: #ffffff;
+  border: 1px solid #dce5de;
+  box-shadow: 0 4px 12px rgba(31, 41, 51, 0.12);
+}
+
+/*
+  Original och redigerad bild placeras automatiskt bredvid varandra
+  när det finns plats. På mobil visas de under varandra.
+*/
+.comparison-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Tar bort standardmarginal runt varje bild */
+.comparison-images figure {
+  margin: 0;
+  background: #f7f7f5;
+}
+
+/* Bilderna fyller sin kolumn utan att förvrängas */
+.comparison-images img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Etikett under varje bild */
+.comparison-images figcaption {
+  padding: 0.75rem;
+  color: #ffffff;
+  text-align: center;
+  background: #1f2933;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Texten som förklarar redigeringen */
+.comparison-text {
+  max-width: 800px;
+  margin-top: 1.5rem;
+}
+
+/* Rubrik för varje bildpar */
+.comparison-text h2 {
+  margin-top: 0;
+  color: #426b50;
+}
+
+/* Läsbart radavstånd i beskrivningen */
+.comparison-text p {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
