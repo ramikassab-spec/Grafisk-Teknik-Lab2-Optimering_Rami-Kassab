@@ -45,7 +45,7 @@ Fotografierna används i JPEG-format, porträttet i PNG med transparens och logo
 
 ## Publicerad webbplats
 
-[Besök Visuell](https://ramikassab-spec.github.io/Lab2.1_Rami-Kassab/)
+[Besök Visuell]https://ramikassab-spec.github.io/Grafisk-Teknik-Lab2-Optimering_Rami-Kassab/index.html
 
 ## Skapare
 
